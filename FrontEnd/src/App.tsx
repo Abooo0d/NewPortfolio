@@ -3,7 +3,9 @@ import LandingPage from "./Sections/LandingPage";
 import Navbar from "./Sections/Navbar";
 import About from "./Sections/About";
 import Portfolio from "./Sections/Portfolio";
-import Test4 from "./Sections/Test4";
+import Quote from "./Sections/Quote";
+import Testimonials from "./Sections/Testimonials";
+import Footer from "./Sections/Footer";
 
 function App() {
   return (
@@ -13,7 +15,9 @@ function App() {
       <About />
       <Skills />
       <Portfolio />
-      <Test4 />
+      <Quote />
+      <Testimonials />
+      <Footer />
     </div>
   );
 }

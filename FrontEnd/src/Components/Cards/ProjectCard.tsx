@@ -21,7 +21,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       ref={ref}
     >
       <motion.div
-        className="relative flex justify-center items-center flex-col gap-4 text-red-500 h-[500px] w-[1000px] rounded-[20px] bg-stone-900/40 border-[2px] shadow-[0px_3px_20px_4px_#b50000] border-[#ff0000] border-solid backdrop-blur-lg"
+        className="relative flex justify-center items-center flex-col gap-4 text-red-500 h-[500px] w-[1000px] rounded-[20px] bg-gradient-to-l from-stone-800/40 to-[#880000]/40 border-[2px] shadow-[0px_3px_40px_4px_#b5000088] border-[#ff0000]/80 border-solid backdrop-blur-2xl"
         animate={{
           scale: isFullyVisible ? 0.8 : 1,
           translateX: isFullyVisible ? 200 - index * 20 : 0,
