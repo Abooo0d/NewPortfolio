@@ -23,8 +23,7 @@ const LandingPage = () => {
             className="text-[120px] mb-8"
           />
           <BlurText
-            threshold={0.5}
-            delay={500}
+            delay={150}
             text=" My Mission"
             animateBy="words"
             direction="top"
@@ -35,7 +34,7 @@ const LandingPage = () => {
           <motion.div
             className="text-stone-300 text-[20px] max-w-[700px] cursor-default"
             animate={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: -50 }}
+            initial={{ opacity: 0, y: -100 }}
             transition={{ duration: 1, ease: "easeOut", delay: 1.8 }}
           >
             Welcome to a space where ideas take shape and creativity meets
@@ -58,7 +57,7 @@ const LandingPage = () => {
           <motion.div
             className="text-stone-400 text-lg max-w-[700px] cursor-default"
             animate={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -20 }}
             transition={{ duration: 1, ease: "easeOut", delay: 3 }}
           >
             <SecondaryButton text="Hire Me" classes="gap-2">

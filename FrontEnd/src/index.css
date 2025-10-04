@@ -137,3 +137,25 @@ body {
 ::-webkit-scrollbar {
   width: 0; /* Width of the vertical scrollbar */
 }
+.card-responsive {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 90vw;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 40px 24px;
+  height: 100%;
+}
+.card-responsive .card {
+  /* max-width: 250px; */
+  flex: 1 1 270px;
+  max-height: 200px;
+}
+.card-responsive .card:nth-child(2) {
+  flex: 2 1 450px;
+}
+.card-responsive .card:last-child {
+  flex: 2 1 450px;
+}

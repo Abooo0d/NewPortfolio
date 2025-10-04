@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState, useCallback } from "react";
 import { gsap } from "gsap";
+import { number } from "motion";
 
 export interface BentoCardProps {
   color?: string;
@@ -32,40 +33,38 @@ const MOBILE_BREAKPOINT = 768;
 const cardData: BentoCardProps[] = [
   {
     color: "#11111150",
-    title: "Analytics",
+    title: "Designing Experiences",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste voluptate corporis consequuntur maiores atque quam est placeat cum repudiandae eaque.",
+      "Great design isn’t just about looks — it’s about how it feels to use. I focus on creating interfaces that are clean, modern, and responsive, making every interaction seamless. By combining creativity with attention to detail, I aim to deliver user experiences that feel natural and enjoyable across devices.",
     label: "Insights",
   },
   {
     color: "#11111150",
-    title: "Dashboard",
-    description: "Centralized data view",
+    title: "Engineering Logic",
+    description:
+      "Behind every smooth interface is powerful logic that keeps everything running. I enjoy building solid backends that handle data, workflows, and performance with efficiency. With experience in Laravel and MySQL, I design systems that are both scalable and secure, ensuring reliability no matter how big the project grows.",
     label: "Overview",
   },
   {
     color: "#11111150",
-    title: "Collaboration",
-    description: "Work together seamlessly",
+    title: "Real-Time Magic",
+    description:
+      "The web feels alive when updates happen instantly. I specialize in bringing that magic to life with real-time features like chat systems, live notifications, and dynamic feeds. Using WebSockets and event-driven design, I create experiences where people don’t just use the app — they feel connected to it.",
     label: "Teamwork",
   },
   {
     color: "#11111150",
-    title: "Automation",
-    description: "Streamline workflows",
+    title: "Cross-Platform Thinking",
+    description:
+      "Ideas shouldn’t be limited by devices. That’s why I focus on building applications that work beautifully across web and mobile. From React on the web to React Native for mobile, I bring projects to life in a way that feels consistent, fast, and reliable, no matter where they’re used.",
     label: "Efficiency",
   },
   {
     color: "#11111150",
-    title: "Integration",
-    description: "Connect favorite tools",
+    title: "Creative Problem Solving",
+    description:
+      "Every project has challenges — that’s where I thrive. I enjoy taking complex problems and breaking them down into clear, practical solutions. Whether it’s optimizing performance, improving code structure, or finding new ways to enhance usability, I approach each challenge with creativity, patience, and a focus on results.",
     label: "Connectivity",
-  },
-  {
-    color: "#11111150",
-    title: "Security",
-    description: "Enterprise-grade protection",
-    label: "Protection",
   },
 ];
 
@@ -368,7 +367,7 @@ const ParticleCard: React.FC<{
   return (
     <div
       ref={cardRef}
-      className={`${className} relative overflow-hidden`}
+      className={`${className} relative overflow-hidden card`}
       style={{ ...style, position: "relative", overflow: "hidden" }}
     >
       {children}
@@ -532,7 +531,7 @@ const BentoCardGrid: React.FC<{
   gridRef?: React.RefObject<HTMLDivElement | null>;
 }> = ({ children, gridRef }) => (
   <div
-    className="bento-section grid gap-2 p-3 max-w-[54rem] select-none relative"
+    className="bento-section grid gap-2 p-3 select-none relative max-w-[90vw] min-w-[90vw] overflow-scroll"
     style={{ fontSize: "clamp(1rem, 0.9rem + 0.5vw, 1.5rem)" }}
     ref={gridRef}
   >
@@ -578,6 +577,7 @@ const MagicBento: React.FC<BentoProps> = ({
       <style>
         {`
           .bento-section {
+            max-height:100vh;
             --glow-x: 50%;
             --glow-y: 50%;
             --glow-intensity: 0;
@@ -591,39 +591,59 @@ const MagicBento: React.FC<BentoProps> = ({
             --purple-border: rgba(132, 0, 255, 0.8);
           }
           
-          .card-responsive {
-            grid-template-columns: 1fr;
-            width: 100%;
-            margin: 0 auto;
-            padding: 0.5rem;
-          }
-          
-          @media (min-width: 600px) {
-            .card-responsive {
-              grid-template-columns: repeat(2, 1fr);
-            }
-          }
-          
-          @media (min-width: 1024px) {
-            .card-responsive {
-              grid-template-columns: repeat(4, 1fr);
-            }
+          // .card-responsive {
+          //   display: flex;
+          //   flex-direction:flex-row;
             
-            .card-responsive .card:nth-child(3) {
-              grid-column: span 2;
-              grid-row: span 2;
-            }
-            
-            .card-responsive .card:nth-child(4) {
-              grid-column: 1 / span 2;
-              grid-row: 2 / span 2;
-            }
-            
-            .card-responsive .card:nth-child(6) {
-              grid-column: 4;
-              grid-row: 3;
-            }
-          }
+          //   // grid-template-columns: 1fr;
+          //   gap: 1rem;
+          //   width: 100%;
+          //   margin: 0 auto;
+          //   padding: 0.5rem;
+          // }
+
+          // /* tablet: 2 columns */
+          // @media (min-width: 600px) {
+          //   .card-responsive {
+          //     grid-template-columns: repeat(2, 1fr);
+          //   }
+          // }
+
+          // /* desktop: 3 groups (6 cards = 3x2) */
+          // @media (min-width: 1024px) {
+          //   .card-responsive {
+          //     grid-template-columns: repeat(3, 1fr);
+          //     grid-auto-rows: 1fr; /* equal row height base */
+          //   }
+
+          //   /* group 1 */
+          //   .card-responsive .card:nth-child(1) {
+          //     grid-row: span 2; /* tall */
+          //     height:100%
+          //   }
+          //   .card-responsive .card:nth-child(2) {
+          //     grid-row: span 1; /* short */
+          //   }
+
+          //   /* group 2 (swap order: short on top, tall bottom) */
+          //   .card-responsive .card:nth-child(3) {
+          //     grid-row: span 1; /* short */
+          //   }
+          //   .card-responsive .card:nth-child(4) {
+          //     grid-row: span 2; /* tall */
+          //     height:100%
+          //   }
+
+          //   /* group 3 (same as group 1: tall on top) */
+          //   .card-responsive .card:nth-child(5) {
+          //     grid-row: span 2; /* tall */
+          //     height:100%
+          //   }
+          //   .card-responsive .card:nth-child(6) {
+          //     grid-row: span 1; /* short */
+          //   }
+          // }
+
           
           .card--border-glow::after {
             content: '';
@@ -713,7 +733,7 @@ const MagicBento: React.FC<BentoProps> = ({
       )}
 
       <BentoCardGrid gridRef={gridRef}>
-        <div className="card-responsive grid gap-8  w-full">
+        <div className="card-responsive grid gap-8 w-full">
           {cardData.map((card, index) => {
             const baseClassName = `card flex flex-col justify-between relative aspect-[5/4] min-h-[250px] w-full max-w-full p-5 rounded-[20px] border border-solid font-light overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
               enableBorderGlow ? "card--border-glow" : ""
@@ -742,23 +762,19 @@ const MagicBento: React.FC<BentoProps> = ({
                   clickEffect={clickEffect}
                   enableMagnetism={enableMagnetism}
                 >
-                  <div className="card__header flex justify-between gap-3 relative text-white">
-                    <span className="card__label text-base">{card.label}</span>
-                  </div>
-                  <div className="card__content flex flex-col relative text-white">
+                  <div className="card__content flex flex-col relative text-white overflow-y-scroll">
                     <h3
-                      className={`card__title font-normal text-base m-0 mb-1 ${
-                        textAutoHide ? "text-clamp-1" : ""
-                      }`}
+                      className={`card__title font-normal text-base m-0 mb-1 text-[20px]`}
                     >
                       {card.title}
                     </h3>
                     <p
-                      className={`card__description text-xs leading-5 opacity-90 ${
-                        textAutoHide ? "text-clamp-2" : ""
-                      }`}
+                      className={`card__description text-xs leading-5 opacity-90 text-[18px] text-stone-400`}
                     >
-                      {card.description}
+                      {/* {card?.description && card.description.length >= 300
+                        ? card.description.slice(0, 190) + "..."
+                        : card?.description} */}
+                      {card?.description}
                     </p>
                   </div>
                 </ParticleCard>
