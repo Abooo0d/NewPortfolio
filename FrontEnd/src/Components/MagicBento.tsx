@@ -709,7 +709,7 @@ const MagicBento: React.FC<BentoProps> = ({
                   clickEffect={clickEffect}
                   enableMagnetism={enableMagnetism}
                 >
-                  <div className="card__content flex flex-col relative text-white overflow-y-scroll">
+                  <div className="card__content flex flex-col relative text-white overflow-y-scroll text-center md:text-left">
                     <h3
                       className={`card__title text-[22px] font-bold m-0 mb-1`}
                     >

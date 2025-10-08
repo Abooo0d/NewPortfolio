@@ -6,33 +6,27 @@ import BlurText from "../Components/Shared/BlureText";
 import { motion } from "motion/react";
 const LandingPage = () => {
   return (
-    <div className="relative min-h-screen max-h-screen w-screen max-w-screen bg-black flex justify-end items-end h-screen overflow-y-hidden snap-y snap-mandatory snap-start">
-      <div className="w-full min-h-screen absolute z-0 top-0 left-0">
-        <div className="absolute w-full h-full z-0">
-          {/* <DarkVeil speed={1} hueShift={240} /> */}
-          <div className="absolute top-0 left-0 w-full h-full bg-black/70" />
-        </div>
-      </div>
-      <div className="absolute top-0 left-[200px] flex flex-col justify-center min-h-screen max-w-[800px] gap-8 z-10 mt-8">
-        <h1 className="landing-h1 text-stone-200 text-[120px] leading-[100px] cursor-default">
+    <div className="relative min-h-screen max-h-screen w-screen max-w-screen flex justify-end items-end h-screen overflow-y-hidden snap-y snap-start">
+      <div className="absolute top-0 lg:left-[200px] lg:translate-x-0 left-[50%] translate-x-[-50%] flex flex-col lg:justify-center justify-start items-center min-h-screen lg:max-w-[800px] max-w-[90%] w-full gap-8 z-10 lg:mt-8 mt-16">
+        <h1 className="landing-h1 text-stone-200 leading-[100px] cursor-default">
           <BlurText
             text="Your Vision"
             delay={150}
             animateBy="words"
             direction="top"
-            className="text-[120px] mb-8"
+            className="text-[50px] lg:text-[120px] lg:mb-8"
           />
           <BlurText
             delay={150}
             text=" My Mission"
             animateBy="words"
             direction="top"
-            className="text-[120px] mb-8 ml-10"
+            className="text-[50px] lg:text-[120px] lg:mb-8 lg:ml-10"
           />
         </h1>
-        <div className="flex flex-col pl-16 w-full">
+        <div className="flex flex-col lg:pl-16 lg:w-full w-[90%]">
           <motion.div
-            className="text-stone-300 text-[20px] max-w-[700px] cursor-default"
+            className="lg:text-stone-300 text-stone-400 text-[20px] lg:max-w-[700px] max-w-full text-center lg:text-left cursor-default"
             animate={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: -50 }}
             transition={{ duration: 1, ease: "easeOut", delay: 1 }}
@@ -43,9 +37,9 @@ const LandingPage = () => {
             inspire. Let’s explore what’s possible, together.
           </motion.div>
         </div>
-        <div className="w-full flex justify-start items-center gap-4 z-10 pl-16">
+        <div className="w-full flex flex-col lg:flex-row justify-start items-center gap-4 z-10 lg:pl-16">
           <motion.div
-            className="text-stone-400 text-lg max-w-[700px] cursor-default z-10"
+            className="text-stone-400 text-lg lg:max-w-[700px] max-w-full cursor-default z-10"
             animate={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -100 }}
             transition={{ duration: 1, ease: "easeOut", delay: 2.4 }}
@@ -66,7 +60,7 @@ const LandingPage = () => {
           </motion.div>
         </div>
       </div>
-      <div className="relative min-h-screen min-w-[50%] z-0">
+      <div className="relative min-h-screen lg:min-w-[50%] min-w-full z-0">
         <motion.div
           animate={{ opacity: 1 }}
           initial={{ opacity: 0 }}
@@ -77,7 +71,7 @@ const LandingPage = () => {
           <img
             src="./../Assets/LandingPageImage.png"
             alt="LandingPageImage"
-            className="relative object-cover flex-1 max-h-screen min-h-screen min-w-full z-10 "
+            className="lg:relative absolute bottom-0 left-1/2 transform -translate-x-1/2 h-full w-auto object-cover object-center flex-1 max-h-screen lg:min-h-screen z-[10]"
           />
         </motion.div>
         <div className="absolute bottom-0 left-0 w-full z-10 h-[200px] bg-gradient-to-t from-black via-black/50 to-transparent" />

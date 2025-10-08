@@ -18,6 +18,9 @@ import {
   SiMysql,
   SiTailwindcss,
 } from "react-icons/si";
+import useMediaQuery from "../../Hooks/UseMediaQuery";
+import useScrollInOutView from "../../Hooks/useFullyInView";
+import useActiveOnScroll from "../../Hooks/useFullyInView";
 type ProjectCardProps = {
   project: {
     title?: string;
@@ -34,7 +37,7 @@ type ProjectCardProps = {
   mainRef: ReactRef;
 };
 
-const ProjectCard = ({ project, index }: ProjectCardProps) => {
+const ProjectCard = ({ project, index, mainRef }: ProjectCardProps) => {
   const CheckIcon = (skill: string) => {
     switch (skill) {
       case "react":
@@ -63,26 +66,36 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         return <SiAdobephotoshop className="text-[#00a4e4] text-[50px]" />;
     }
   };
-  const { ref, isFullyVisible } = useFullyInView(0.99);
+  const { ref, isActive } = useActiveOnScroll(0.99, mainRef);
+  const isLargeScreen = useMediaQuery("(min-width: 1024px)");
+  const isMediumScreen = useMediaQuery("(min-width: 768px)");
   return (
     <div
-      className={`h-[100vh] flex justify-center items-center sticky top-0 z-10 ${
-        !!isFullyVisible ? "pt-[100px]" : "pt-[0px]"
-      }`}
+      className={`md:h-[100vh] h-[100vh] flex justify-center lg:items-center items-center sticky top-0 z-10  ${
+        !!isActive ? "lg:pt-[100px] pt-[10px]" : "pt-[0px]"
+      } ${index == 0 ? "mt-[80%]" : "mt-0"}`}
       ref={ref}
     >
       <motion.div
         className={`flex justify-start items-center p-4 gap-4 relative h-[500px] w-[1000px] rounded-[20px] bg-gradient-to-bl from-stone-950/40 to-black/40 border-solid border-[4px] duration-200 backdrop-blur-3xl [transform-style:preserve-3d] shadow-[0px_0px_20px_5px_#00000088] ${
-          !!isFullyVisible ? " border-stone-900/50" : "border-[#ff0000]"
+          !!isActive ? " border-stone-900/50" : "border-[#ff0000]"
         }`}
         animate={{
-          scale: isFullyVisible ? 0.8 : 1,
-          rotateY: isFullyVisible ? "20deg" : "0deg",
-          rotateX: isFullyVisible ? "-10deg" : "0deg",
-          rotateZ: isFullyVisible ? "-2deg" : "0deg",
-          translateX: isFullyVisible ? -200 + index * 20 : 0,
+          scale: isActive ? index * 0.04 + 0.7 : 1,
+          rotateY: isLargeScreen ? (isActive ? "20deg" : "0") : "0",
+          rotateX: isLargeScreen ? (isActive ? "-10deg" : "0deg") : "0",
+          rotateZ: isLargeScreen ? (isActive ? "-2deg" : "0") : "0",
+          translateX: isLargeScreen ? (isActive ? -300 + index * 30 : 0) : 0,
         }}
-        style={{ top: !!isFullyVisible ? `calc(-10% + ${index * 40}px)` : "0" }}
+        style={{
+          top: isLargeScreen
+            ? `calc(-20% + ${index * 40}px)`
+            : isMediumScreen
+            ? `calc(5% + ${index * 40}px)`
+            : isActive
+            ? `calc(${index * 30}px)`
+            : "0",
+        }}
       >
         <div className="max-w-[400px] w-full h-full rounded-[20px] overflow-hidden relative border-[2px] border-solid border-stone-700/50 hover:border-[#ff0000] duration-300 group">
           <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 duration-300 backdrop-blur-md flex justify-center items-center gap-4">
@@ -122,3 +135,35 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 };
 
 export default ProjectCard;
+{
+  /**
+  
+   animate={{
+          scale: isLargeScreen
+            ? isActive
+              ? 0.7
+              : 1
+            : isActive
+            ? index * 0.02 + 0.6
+            : 1,
+          rotateY: isActive ? "20deg" : "0deg",
+          rotateX: isLargeScreen ? (isActive ? "-10deg" : "0deg") : "0deg",
+          rotateZ: isActive ? "-2deg" : "0deg",
+          translateX: isLargeScreen
+            ? isActive
+              ? -200 + index * 20
+              : 0
+            : isActive
+            ? -150 + index * 30
+            : 0,
+        }}
+        style={{
+          top: !!isLargeScreen
+            ? !!isActive
+              ? `calc(-10% + ${index * 40}px)`
+              : "0"
+            : !!isActive
+            ? `calc(-10% + ${index * 30}px)`
+            : "0",
+        }}*/
+}
