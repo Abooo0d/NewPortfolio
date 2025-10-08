@@ -32,7 +32,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
     <div
       ref={ref}
       {...rest}
-      className={`absolute top-0 left-[100px] rounded-xl border border-gray-700/50 hover:border-white duration-200 hover:shadow-[0px_0px_36px_13px_#00000088] bg-stone-950 [transform-style:preserve-3d] [will-change:transform] [backface-visibility:hidden] ${
+      className={`absolute top-0 left-[100px] flex justify-start items-start flex-col gap-4 p-8 rounded-xl border-solid border-[2px] border-stone-900 hover:border-stone-400 backdrop-blur-2xl duration-200 hover:shadow-[0px_0px_36px_13px_#00000088] bg-gradient-to-bl from-stone-800/40 to-stone-900/40 [transform-style:preserve-3d] [will-change:transform] [backface-visibility:hidden] shadow-[0px_0px_20px_5px_#00000088]${
         customClass ?? ""
       } ${rest.className ?? ""}`.trim()}
     />
@@ -75,7 +75,7 @@ const placeNow = (el: HTMLElement, slot: Slot, skew: number) =>
 
 const CardSwap: React.FC<CardSwapProps> = ({
   width = 600,
-  height = 400,
+  height = 350,
   cardDistance = 60,
   verticalDistance = 70,
   delay = 5000,

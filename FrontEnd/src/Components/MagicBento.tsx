@@ -590,59 +590,6 @@ const MagicBento: React.FC<BentoProps> = ({
             --purple-glow: rgba(132, 0, 255, 0.2);
             --purple-border: rgba(132, 0, 255, 0.8);
           }
-          
-          // .card-responsive {
-          //   display: flex;
-          //   flex-direction:flex-row;
-            
-          //   // grid-template-columns: 1fr;
-          //   gap: 1rem;
-          //   width: 100%;
-          //   margin: 0 auto;
-          //   padding: 0.5rem;
-          // }
-
-          // /* tablet: 2 columns */
-          // @media (min-width: 600px) {
-          //   .card-responsive {
-          //     grid-template-columns: repeat(2, 1fr);
-          //   }
-          // }
-
-          // /* desktop: 3 groups (6 cards = 3x2) */
-          // @media (min-width: 1024px) {
-          //   .card-responsive {
-          //     grid-template-columns: repeat(3, 1fr);
-          //     grid-auto-rows: 1fr; /* equal row height base */
-          //   }
-
-          //   /* group 1 */
-          //   .card-responsive .card:nth-child(1) {
-          //     grid-row: span 2; /* tall */
-          //     height:100%
-          //   }
-          //   .card-responsive .card:nth-child(2) {
-          //     grid-row: span 1; /* short */
-          //   }
-
-          //   /* group 2 (swap order: short on top, tall bottom) */
-          //   .card-responsive .card:nth-child(3) {
-          //     grid-row: span 1; /* short */
-          //   }
-          //   .card-responsive .card:nth-child(4) {
-          //     grid-row: span 2; /* tall */
-          //     height:100%
-          //   }
-
-          //   /* group 3 (same as group 1: tall on top) */
-          //   .card-responsive .card:nth-child(5) {
-          //     grid-row: span 2; /* tall */
-          //     height:100%
-          //   }
-          //   .card-responsive .card:nth-child(6) {
-          //     grid-row: span 1; /* short */
-          //   }
-          // }
 
           
           .card--border-glow::after {
@@ -764,16 +711,13 @@ const MagicBento: React.FC<BentoProps> = ({
                 >
                   <div className="card__content flex flex-col relative text-white overflow-y-scroll">
                     <h3
-                      className={`card__title font-normal text-base m-0 mb-1 text-[20px]`}
+                      className={`card__title text-[22px] font-bold m-0 mb-1`}
                     >
                       {card.title}
                     </h3>
                     <p
                       className={`card__description text-xs leading-5 opacity-90 text-[18px] text-stone-400`}
                     >
-                      {/* {card?.description && card.description.length >= 300
-                        ? card.description.slice(0, 190) + "..."
-                        : card?.description} */}
                       {card?.description}
                     </p>
                   </div>
@@ -897,14 +841,12 @@ const MagicBento: React.FC<BentoProps> = ({
                 }}
               >
                 <div className="card__header flex justify-between gap-3 relative text-white">
-                  <span className="card__label text-base">{card.label}</span>
+                  <span className="card__label text-base text-red-500">
+                    {card.label}
+                  </span>
                 </div>
-                <div className="card__content flex flex-col relative text-white">
-                  <h3
-                    className={`card__title font-normal text-base m-0 mb-1 ${
-                      textAutoHide ? "text-clamp-1" : ""
-                    }`}
-                  >
+                <div className="card__content flex flex-col relative text-red-500">
+                  <h3 className={`card__title font-normal text-lg m-0 mb-1`}>
                     {card.title}
                   </h3>
                   <p

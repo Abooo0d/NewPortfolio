@@ -1,7 +1,75 @@
+import { motion } from "motion/react";
+import TextInput from "../Components/Shared/TextInput";
+import PrimaryButton from "../Components/Shared/PrimaryButton";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { CiLinkedin } from "react-icons/ci";
+import { BsTwitterX } from "react-icons/bs";
 const Footer = () => {
   return (
-    <section className="bg-blue-500 min-h-screen h-screen w-screen snap-start">
-      Footer
+    <section className="bg-black min-h-screen h-screen w-screen snap-start flex justify-between items-center px-[100px] relative">
+      <div className="absolute w-full bottom-[0px] left-[0%] h-[80px] bg-gradient-to-t from-transparent bg-stone-900 border-t-[2px] border-t-solid border-t-stone-700/50" />
+      {/* <div className="absolute top-[250px]   right-[50%] translate-x-[50%] w-[500px] h-[500px] bg-black rounded-full blur-[20px] z-[10]" /> */}
+      <img
+        src="./../../public/Assets/FooterImage.png"
+        className="absolute bottom-[0px] right-[50%] translate-x-[50%] h-[600px] object-contain z-10"
+      />
+      <div className="w-[35%] h-[60%] rounded-[20px] p-[1px] z-0 relative bg-gradient-to-br from-stone-500 via-stone-800 to-bg-black">
+        <div className="absolute w-[calc(100%-2px)] h-[calc(100%-2px)] top-[1px] bg-black left-[1px] rounded-[20px] z-0" />
+        <div className="py-4 px-8 flex flex-col flex-1 bg-gradient-to-br from-stone-800 via-stone-900/50 to-bg-black rounded-[20px] w-full h-full z-[10] relative">
+          <h1 className="text-stone-300 flex flex-col text-center w-full text-[20px]">
+            <span>
+              Take a Coffee <span className="red">&</span>
+            </span>
+            Chat With Me
+          </h1>
+          <motion.div className="flex flex-col gap-0 justify-center items-start w-full ">
+            <h1 className="red text-[26px] cursor-default">Email</h1>
+            <TextInput />
+          </motion.div>
+          <motion.div className="flex flex-col gap-0 justify-center items-start w-full ">
+            <h1 className="red text-[26px]  cursor-default">Message</h1>
+            <TextInput textarea={true} />
+          </motion.div>
+          <motion.div className="w-fit mx-auto mt-4">
+            <PrimaryButton text="Send" />
+          </motion.div>
+        </div>
+      </div>
+      <div className="w-[35%] h-[60%] rounded-[20px] p-[1px] z-0 relative bg-gradient-to-bl from-stone-500 via-stone-800 to-bg-black">
+        <div className="absolute w-[calc(100%-2px)] h-[calc(100%-2px)] top-[1px] bg-black left-[1px] rounded-[20px] z-0" />
+        <div className="py-4 px-8 flex flex-col flex-1 gap-4 bg-gradient-to-bl from-stone-800 via-stone-900/50 to-bg-black rounded-[20px] w-full h-full z-[10] relative">
+          <h1 className="text-stone-300 flex text-center w-full justify-center items-center text-[20px] gap-1">
+            <span className="red">OR </span> Text Me Here
+          </h1>
+          <div className="w-full flex flex-col justify-center items-center gap-4 text-stone-400">
+            <h1 className="w-full flex justify-center items-center bg-gradient-to-r from-stone-700/50 to-stone-900 border-[1px] border-solid border-stone-600/50 cursor-default px-4 py-2 rounded-[10px]">
+              abdsadalden2001<span className="red">@</span>gmail.com
+            </h1>
+            <h1 className="w-full flex justify-center items-center bg-gradient-to-r from-stone-700/50 to-stone-900 border-[1px] border-solid border-stone-600/50 cursor-default px-4 py-2 rounded-[10px]">
+              <span className="red mr-2">+963</span> 951-745-564
+            </h1>
+          </div>
+          <div className="w-[80%] h-[1px] bg-stone-700/50 mx-auto" />
+          <h1 className="text-stone-300 flex text-center w-full justify-center items-center text-[20px] gap-1">
+            <span className="red">And </span>Visit Me Here
+          </h1>
+          <div className="flex justify-center items-center flex-wrap gap-4 h-fit">
+            <div className="max-w-[150px] p-0 flex justify-center items-center w-full max-h-[70px] h-full rounded-[10px] bg-[#1877f2]/70 border-[1px] hover:bg-[#1877f2] border-solid border-transparent cursor-pointer hover:border-[#1877f2] duration-200 hover:shadow-[0px_0px_20px_5px_#1877f288] group">
+              <FaFacebook className="text-[50px] p-0 m-0 text-stone-300 group-hover:text-white" />
+            </div>
+            <div className="max-w-[150px] flex justify-center items-center w-full max-h-[70px] h-full rounded-[10px] bg-gradient-to-br to-[#833ab4] to-100% from-[#e1306c] border-[1px] border-solid border-transparent cursor-pointer hover:border-[#e1306c] duration-200 hover:shadow-[0px_0px_20px_5px_#e1306c88] group">
+              <FaInstagram className="text-[50px] p-0 m-0 text-stone-300 group-hover:text-white" />
+            </div>
+            <div className="max-w-[150px] flex justify-center items-center w-full max-h-[70px] h-full rounded-[10px] bg-[#000000] border-[1px] border-solid border-transparent cursor-pointer hover:border-white duration-200 hover:shadow-[0px_0px_20px_5px_#d6d3d188]">
+              <BsTwitterX className="text-[50px] p-0 m-0 text-stone-300 group-hover:text-white" />
+            </div>
+            <div className="max-w-[150px] p-0 flex justify-center items-center w-full max-h-[70px] h-full rounded-[10px] bg-[#0a66c2]/70 border-[1px] hover:bg-[#0a66c2] border-solid border-transparent cursor-pointer hover:border-[#0a66c2] duration-200 hover:shadow-[0px_0px_20px_5px_#0a66c288] group">
+              <CiLinkedin className="text-[50px] p-0 m-0 text-stone-300 group-hover:text-white" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute bottom-[20px] right-[50%] translate-x-[50%] w-[500px] h-[150px] bg-black z-1 blur-[30px]" />
     </section>
   );
 };

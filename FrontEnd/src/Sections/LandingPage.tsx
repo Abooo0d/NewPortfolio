@@ -34,8 +34,8 @@ const LandingPage = () => {
           <motion.div
             className="text-stone-300 text-[20px] max-w-[700px] cursor-default"
             animate={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: -100 }}
-            transition={{ duration: 1, ease: "easeOut", delay: 1.8 }}
+            initial={{ opacity: 0, y: -50 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 1 }}
           >
             Welcome to a space where ideas take shape and creativity meets
             technology. This is more than just a portfolio — it’s a showcase of
@@ -45,7 +45,7 @@ const LandingPage = () => {
         </div>
         <div className="w-full flex justify-start items-center gap-4 z-10 pl-16">
           <motion.div
-            className="text-stone-400 text-lg max-w-[700px] cursor-default"
+            className="text-stone-400 text-lg max-w-[700px] cursor-default z-10"
             animate={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -100 }}
             transition={{ duration: 1, ease: "easeOut", delay: 2.4 }}
@@ -57,7 +57,7 @@ const LandingPage = () => {
           <motion.div
             className="text-stone-400 text-lg max-w-[700px] cursor-default"
             animate={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -100 }}
             transition={{ duration: 1, ease: "easeOut", delay: 3 }}
           >
             <SecondaryButton text="Hire Me" classes="gap-2">

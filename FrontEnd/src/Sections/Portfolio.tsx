@@ -7,45 +7,99 @@ const Portfolio = () => {
       title: "Matthias Leidinger",
       description:
         "Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.",
-      src: "rock.jpg",
-      link: "https://picsum.photos/200/301",
-      color: "#BBACAF",
+      type: "Fullstack App",
+      imgUrl: "https://picsum.photos/500/504",
+      links: {
+        app: "https://google.com",
+        git: "https://github.com",
+      },
+      skills: ["react", "tailwind", "laravel", "mysql"],
     },
     {
-      title: "Clément Chapillon",
+      title: "Matthias Leidinger",
       description:
-        "This is a story on the border between reality and imaginary, about the contradictory feelings that the insularity of a rocky, arid, and wild territory provokes”—so French photographer Clément Chapillon describes his latest highly captivating project Les rochers fauves (French for ‘The tawny rocks’).",
-      src: "tree.jpg",
-      link: "https://picsum.photos/200/302",
-      color: "#977F6D",
+        "Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.",
+      type: "Fullstack App",
+      imgUrl: "https://picsum.photos/500/504",
+      links: {
+        app: "https://google.com",
+        git: "https://github.com",
+      },
+      skills: ["react", "tailwind", "laravel", "mysql"],
     },
     {
-      title: "Zissou",
+      title: "Matthias Leidinger",
       description:
-        "Though he views photography as a medium for storytelling, Zissou’s images don’t insist on a narrative. Both crisp and ethereal, they’re encoded with an ambiguity—a certain tension—that lets the viewer find their own story within them.",
-      src: "water.jpg",
-      link: "https://picsum.photos/200/303",
-      color: "#C2491D",
+        "Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.",
+      type: "Fullstack App",
+      imgUrl: "https://picsum.photos/500/504",
+      links: {
+        app: "https://google.com",
+        git: "https://github.com",
+      },
+      skills: ["react", "tailwind", "laravel", "mysql"],
+    },
+    {
+      title: "Matthias Leidinger",
+      description:
+        "Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.",
+      type: "Fullstack App",
+      imgUrl: "https://picsum.photos/500/504",
+      links: {
+        app: "https://google.com",
+        git: "https://github.com",
+      },
+      skills: ["react", "tailwind", "laravel", "mysql"],
     },
   ];
   const container = useRef(null);
   return (
-    <motion.section
-      className="mt-[50vh] h-screen overflow-y-auto snap-start"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: false, amount: 0.4 }}
-      ref={container}
-    >
-      {projects.map((project, index) => (
-        <ProjectCard
-          project={project}
-          key={"p" + index}
-          index={index}
-          mainRef={container}
-        />
-      ))}
-    </motion.section>
+    <div className="w-screen min-h-screen h-full relative snap-start">
+      <div className="absolute top-0 left-0 w-full h-[100px] flex justify-center items-center">
+        <div className="flex justify-evenly items-center gap-4 rounded-full w-[500px] h-[60px] border-[2px] border-solid border-stone-900/50 hover:border-[#ff000055] z-[100] hover:shadow-[0px_0px_10px_0px_#ff000088] duration-300 group">
+          <span className="text-stone-600 cursor-pointer px-4 py-2 rounded-full border-[2px] border-transparent hover:border-[#ff0000] hover:bg-stone-950 duration-200 hover:shadow-[0px_0px_10px_0px_#ff000088] group-hover:text-stone-200">
+            UI/UX
+          </span>
+          <span className="text-stone-600 cursor-pointer px-4 py-2 rounded-full border-[2px] border-transparent hover:border-[#ff0000] hover:bg-stone-950 duration-200 hover:shadow-[0px_0px_10px_0px_#ff000088] group-hover:text-stone-200">
+            Full Stack
+          </span>
+          <span className="text-stone-600 cursor-pointer px-4 py-2 rounded-full border-[2px] border-transparent hover:border-[#ff0000] hover:bg-stone-950 duration-200 hover:shadow-[0px_0px_10px_0px_#ff000088] group-hover:text-stone-200">
+            Frontend
+          </span>
+        </div>
+      </div>
+      <div className="absolute top-[150px] right-[80px] w-[400px] h-[400px] flex justify-start flex-col items-start">
+        <h1 className="text-[24px] text-stone-200 flex flex-col w-fit mb-2">
+          Some Of My<span className="red">Creations</span>
+        </h1>
+        <div className="text-stone-400 text-[20px]">
+          My portfolio is a reflection of both my technical skills and creative
+          approach to problem-solving. Each project represents more than code —
+          it’s about crafting meaningful digital experiences. From responsive
+          interfaces to scalable backends, these works highlight my ability to
+          transform ideas into functional, impactful solutions.
+        </div>
+      </div>
+      <motion.section
+        className="h-screen overflow-y-auto relative"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: false, amount: 0.4 }}
+        ref={container}
+      >
+        {/* <div className="fixed w-[200px] h-[200px] top-[300px] right-[300px] bg-[#ff0000] blur-[200px] animate-pulse" /> */}
+        {/* <div className="bg-red-500 py-10 min-w-full ">Abood</div> */}
+        {projects.map((project, index) => (
+          <ProjectCard
+            project={project}
+            key={"p" + index}
+            index={index}
+            mainRef={container}
+          />
+        ))}
+      </motion.section>
+    </div>
   );
 };
 

@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 
 const Skills = () => {
   return (
-    <div className="min-h-screen bg-black overflow-hidden max-h-screen max-w-screen w-screen flex justify-center items-center snap-start">
+    <div className="min-h-screen bg-black overflow-hidden max-h-screen max-w-screen w-screen flex justify-center items-center snap-start z-[100]">
       <motion.div
         className="h-screen w-full flex items-center justify-center rounded-xl "
         initial={{ opacity: 0, y: 50 }} // Start hidden + pushed down

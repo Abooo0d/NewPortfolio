@@ -10,7 +10,7 @@ import Footer from "./Sections/Footer";
 function App() {
   return (
     <div className="h-screen overflow-y-scroll snap-y snap-mandatory">
-      <Navbar />
+      {/* <Navbar /> */}
       <LandingPage />
       <About />
       <Skills />
