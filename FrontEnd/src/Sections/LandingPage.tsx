@@ -8,20 +8,20 @@ const LandingPage = () => {
   return (
     <div className="relative min-h-screen max-h-screen w-screen max-w-screen flex justify-end items-end h-screen overflow-y-hidden snap-y snap-start">
       <div className="absolute top-0 lg:left-[200px] lg:translate-x-0 left-[50%] translate-x-[-50%] flex flex-col lg:justify-center justify-start items-center min-h-screen lg:max-w-[800px] max-w-[90%] w-full gap-8 z-10 lg:mt-8 mt-16">
-        <h1 className="landing-h1 text-stone-200 leading-[100px] cursor-default">
+        <h1 className="landing-h1 text-stone-200 text-center leading-[100px] cursor-default">
           <BlurText
             text="Your Vision"
             delay={150}
             animateBy="words"
             direction="top"
-            className="text-[50px] lg:text-[120px] lg:mb-8"
+            className="text-[60px] md:text-[80px] lg:text-[120px] lg:mb-8 text-center"
           />
           <BlurText
             delay={150}
             text=" My Mission"
             animateBy="words"
             direction="top"
-            className="text-[50px] lg:text-[120px] lg:mb-8 lg:ml-10"
+            className="text-[60px] md:text-[80px] lg:text-[120px] lg:mb-8 lg:ml-10"
           />
         </h1>
         <div className="flex flex-col lg:pl-16 lg:w-full w-[90%]">
@@ -48,7 +48,7 @@ const LandingPage = () => {
               <FaArrowDown />
             </PrimaryButton>
           </motion.div>
-          <motion.div
+          {/* <motion.div
             className="text-stone-400 text-lg max-w-[700px] cursor-default"
             animate={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -100 }}
@@ -57,7 +57,7 @@ const LandingPage = () => {
             <SecondaryButton text="Hire Me" classes="gap-2">
               <FaArrowRight />
             </SecondaryButton>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
       <div className="relative min-h-screen lg:min-w-[50%] min-w-full z-0">

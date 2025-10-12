@@ -27,8 +27,10 @@ const Quote = () => {
           </span>
           <span>every function a sentence, </span>
           <span>every design a chapter.</span>
-          <span>I craft digital experiences that inspire,</span>{" "}
-          <span className="block">connect, and bring imagination to life </span>
+          <span className="flex flex-col">
+            I craft digital experiences <span> that inspire, connect,</span>
+          </span>
+          <span className="block"> and bring imagination to life </span>
           <span className="red block mx-auto">in meaningful ways</span>
         </motion.div>
         <div className="w-full h-[35%] bg-gradient-to-t from-black to-transparent" />

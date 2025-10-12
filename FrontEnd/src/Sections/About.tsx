@@ -1,80 +1,54 @@
+import { FaArrowDown } from "react-icons/fa6";
 import Techs from "./Techs";
 import { motion } from "motion/react";
+import SecondaryButton from "../Components/Shared/SecondaryButton";
 const About = () => {
   return (
     <>
       <div className="min-h-screen bg-black w-screen overflow-hidden relative overflow-y-hidden snap-y snap-mandatory snap-start">
-        <div className="text-stone-200 max-h-screen absolute inset-0 max-w-[80%] mx-auto pt-[0px] ">
+        <div className="text-stone-300 max-h-screen absolute inset-0 max-w-[80%] mx-auto flex flex-col justify-center items-center gap-4 pt-4">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 2 }}
-            viewport={{ once: true }}
-            className="md:max-w-[350px] hidden md:block absolute text-[20px] lg:top-[35%] top-[30%] lg:left-[0px] left-0 w-[100%] text-stone-300 text-center bg-black gray border-[2px] border-solid border-stone-800/50 rounded-[30px] p-[20px] hover:border-[#ff000088] hover:scale-110 hover:rotate-z-[-5deg] transition-all duration-300 z-10 cursor-default "
+            className="md:max-w-[95%] max-w-screen w-full about-h1 lg:text-[50px] md:text-[35px] text-[24px] text-center mx-auto lg:leading-[50px] md:leading-[35px] font-extrabold"
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ amount: 1, once: true }}
+            transition={{ duration: 1, delay: 0.5 }}
           >
-            <div>
-              Hey, I`m a digital creator who blends design and code to craft
-              experiences that feel alive.
-            </div>
+            <span className="lg:ml-[340px]"> For me</span>
+            <span className="red font-bold">
+              {" "}
+              coding is storytelling every function a sentence,every design a
+              chapter
+            </span>
+            . I craft digital experiences that inspire, connect, and bring
+            imagination to life in meaningful ways
           </motion.div>
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 2.6 }}
-            viewport={{ once: true }}
-            className="md:max-w-[600px] hidden md:block absolute text-[20px] lg:top-[65%] md:top-[60%] md:left-[100px] w-full text-stone-300 text-center bg-black gray border-[2px] border-solid border-stone-800/50 rounded-[30px] p-[20px] hover:border-[#ff000088] hover:scale-110 hover:rotate-z-[-5deg] transition-all duration-300 z-10 cursor-default "
+            className="full flex flex-col lg:justify-start justify-start lg:items-start items-center text-stone-400 gap-8 lg:w-[50%] md:w-[80%] w-screen px-4 md:px-0 lg:ml-auto "
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ amount: 0.8, once: true }}
+            transition={{ duration: 0.8, delay: 1.5 }}
           >
-            <div>
-              For me, every project is more than just pixels on a screen — it`s
-              a story, an emotion, and a chance to inspire. I thrive on
-              experimenting, learning, and pushing boundaries to build
-              interfaces that not only work but also wow.
+            <div className=" text-[18px] text-center lg:text-left">
+              Hey, I’m a digital creator who blends design and code to craft
+              experiences that feel alive. For me, every project is more than
+              just pixels on a screen — it’s a story, an emotion, and a chance
+              to inspire. I thrive on experimenting, learning, and pushing
+              boundaries to build interfaces that not only work but also wow.
             </div>
+            <motion.div
+              className="text-stone-400 text-lg lg:max-w-[700px] max-w-full cursor-default z-10"
+              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
+              transition={{ duration: 1, ease: "easeOut", delay: 2.4 }}
+              viewport={{ once: true }}
+            >
+              <SecondaryButton text="Explore My Portfolio" classes="gap-2">
+                <FaArrowDown />
+              </SecondaryButton>
+            </motion.div>
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 2.2 }}
-            viewport={{ once: true }}
-            className="md:max-w-[600px] md:hidden absolute text-[20px] top-[30%] left-0 w-full text-stone-300 text-center bg-black gray border-[2px] border-solid border-stone-800/50 rounded-[30px] p-[20px] hover:border-[#ff000088] hover:scale-110 hover:rotate-z-[-5deg] transition-all duration-300 z-10 cursor-default "
-          >
-            <div>
-              Hey, I`m a digital creator who blends design and code to craft
-              experiences that feel alive.
-            </div>
-            <div>
-              For me, every project is more than just pixels on a screen — it`s
-              a story, an emotion, and a chance to inspire. I thrive on
-              experimenting, learning, and pushing boundaries to build
-              interfaces that not only work but also wow.
-            </div>
-          </motion.div>
-          <div className="lg:text-[76px] xl:text-[86px] md:text-[56px] text-center md:text-left text-[35px] cursor-default absolute top-[20px] right-0 about-h1 w-full flex flex-col md:justify-end md:items-end items-center justify-center ">
-            <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              Bringing <span className="red">ideas</span> to life
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
-              viewport={{ once: true }}
-            >
-              one line of <span className="red">code</span>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 1.2 }}
-              viewport={{ once: true }}
-            >
-              at a time.
-            </motion.div>
-          </div>
         </div>
       </div>
       <Techs />

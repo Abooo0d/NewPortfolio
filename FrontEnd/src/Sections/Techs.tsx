@@ -96,7 +96,10 @@ const TechsData: Tech[] = [
 ];
 const Techs = () => {
   return (
-    <div style={{ height: "100px", position: "relative", overflow: "hidden" }}>
+    <div
+      style={{ position: "relative", overflow: "hidden" }}
+      className="snap-end mb-[50px] py-[50px]"
+    >
       <LogoLoop
         logos={TechsData}
         speed={100}

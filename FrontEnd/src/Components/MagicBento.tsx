@@ -531,7 +531,7 @@ const BentoCardGrid: React.FC<{
   gridRef?: React.RefObject<HTMLDivElement | null>;
 }> = ({ children, gridRef }) => (
   <div
-    className="bento-section grid gap-2 p-3 select-none relative max-w-[90vw] min-w-[90vw] overflow-scroll"
+    className="bento-section grid gap-2 select-none relative max-w-screen min-w-[90vw] overflow-scroll"
     style={{ fontSize: "clamp(1rem, 0.9rem + 0.5vw, 1.5rem)" }}
     ref={gridRef}
   >
@@ -680,7 +680,7 @@ const MagicBento: React.FC<BentoProps> = ({
       )}
 
       <BentoCardGrid gridRef={gridRef}>
-        <div className="card-responsive grid gap-8 w-full">
+        <div className="card-responsive my-4 pt-[20px] grid gap-8 min-w-screen">
           {cardData.map((card, index) => {
             const baseClassName = `card flex flex-col justify-between relative aspect-[5/4] min-h-[250px] w-full max-w-full p-5 rounded-[20px] border border-solid font-light overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
               enableBorderGlow ? "card--border-glow" : ""
@@ -841,11 +841,9 @@ const MagicBento: React.FC<BentoProps> = ({
                 }}
               >
                 <div className="card__header flex justify-between gap-3 relative text-white">
-                  <span className="card__label text-base text-red-500">
-                    {card.label}
-                  </span>
+                  <span className="card__label text-base ">{card.label}</span>
                 </div>
-                <div className="card__content flex flex-col relative text-red-500">
+                <div className="card__content flex flex-col relative">
                   <h3 className={`card__title font-normal text-lg m-0 mb-1`}>
                     {card.title}
                   </h3>

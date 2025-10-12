@@ -6,6 +6,7 @@ import Portfolio from "./Sections/Portfolio";
 import Quote from "./Sections/Quote";
 import Testimonials from "./Sections/Testimonials";
 import Footer from "./Sections/Footer";
+import Abood from "./Sections/Abood";
 
 function App() {
   return (

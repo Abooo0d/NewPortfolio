@@ -32,7 +32,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
     <div
       ref={ref}
       {...rest}
-      className={`absolute top-[-200px] left-[-50px] md:top-[100px] lg:top-0 xl:left-[100px] lg:left-[200px] flex justify-start items-start flex-col gap-4 p-8 rounded-xl border-solid border-[2px] border-stone-900 hover:border-stone-400 backdrop-blur-2xl duration-200 hover:shadow-[0px_0px_36px_13px_#00000088] bg-gradient-to-bl from-stone-800/40 to-stone-900/40 [transform-style:preserve-3d] [will-change:transform] [backface-visibility:hidden] shadow-[0px_0px_20px_5px_#00000088]${
+      className={`absolute left-[50%] translate-x-[-50%] bottom-[-30%] translate-y-[-50%] flex justify-start items-start flex-col gap-4 p-8 rounded-xl border-solid border-[2px] border-stone-900 hover:border-stone-400 backdrop-blur-2xl duration-200 hover:shadow-[0px_0px_36px_13px_#00000088] bg-gradient-to-bl from-stone-800/40 to-stone-900/40 [transform-style:preserve-3d] [will-change:transform] [backface-visibility:hidden] shadow-[0px_0px_20px_5px_#00000088]${
         customClass ?? ""
       } ${rest.className ?? ""}`.trim()}
     />
@@ -74,8 +74,8 @@ const placeNow = (el: HTMLElement, slot: Slot, skew: number) =>
   });
 
 const CardSwap: React.FC<CardSwapProps> = ({
-  width = 600,
-  height = 350,
+  width = 500,
+  height = 300,
   cardDistance = 60,
   verticalDistance = 70,
   delay = 5000,
@@ -235,8 +235,7 @@ const CardSwap: React.FC<CardSwapProps> = ({
   return (
     <div
       ref={container}
-      className="absolute bottom-0 right-0 transform translate-x-[5%] translate-y-[20%] origin-bottom-right perspective-[900px] overflow-visible max-[768px]:translate-x-[25%] max-[768px]:translate-y-[25%] max-[768px]:scale-[0.75] max-[480px]:translate-x-[25%] max-[480px]:translate-y-[25%] max-[480px]:scale-[0.55]"
-      style={{ width, height }}
+      className="absolute bottom-0 lg:bottom-[50%] lg:translate-y-[50%] w-full bg-red-500 h-[400px] lg:w-[500px] lg:h-[400px] right-0 "
     >
       {rendered}
     </div>
