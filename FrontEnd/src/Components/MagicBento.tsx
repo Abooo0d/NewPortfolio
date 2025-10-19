@@ -35,35 +35,35 @@ const cardData: BentoCardProps[] = [
     color: "#11111150",
     title: "Designing Experiences",
     description:
-      "Great design isn’t just about looks — it’s about how it feels to use. I focus on creating interfaces that are clean, modern, and responsive, making every interaction seamless. By combining creativity with attention to detail, I aim to deliver user experiences that feel natural and enjoyable across devices.",
+      "I believe great design should feel effortless. I focus on crafting clean, modern interfaces that look great and flow naturally, turning every interaction into something smooth, simple, and enjoyable.",
     label: "Insights",
   },
   {
     color: "#11111150",
     title: "Engineering Logic",
     description:
-      "Behind every smooth interface is powerful logic that keeps everything running. I enjoy building solid backends that handle data, workflows, and performance with efficiency. With experience in Laravel and MySQL, I design systems that are both scalable and secure, ensuring reliability no matter how big the project grows.",
+      "Good ideas need solid logic behind them. I love building backends that are fast, reliable, and secure using Laravel and MySQL — systems that quietly make everything work perfectly.",
     label: "Overview",
   },
   {
     color: "#11111150",
     title: "Real-Time Magic",
     description:
-      "The web feels alive when updates happen instantly. I specialize in bringing that magic to life with real-time features like chat systems, live notifications, and dynamic feeds. Using WebSockets and event-driven design, I create experiences where people don’t just use the app — they feel connected to it.",
+      "I’m obsessed with making the web feel alive — instant chats, live updates, and real-time feeds. With WebSockets and event-driven design, I bring energy and connection to every project.",
     label: "Teamwork",
   },
   {
     color: "#11111150",
     title: "Cross-Platform Thinking",
     description:
-      "Ideas shouldn’t be limited by devices. That’s why I focus on building applications that work beautifully across web and mobile. From React on the web to React Native for mobile, I bring projects to life in a way that feels consistent, fast, and reliable, no matter where they’re used.",
+      "Users deserve a great experience everywhere. I build apps that feel fast and consistent across web and mobile using React and React Native — no matter the screen, it just works.",
     label: "Efficiency",
   },
   {
     color: "#11111150",
     title: "Creative Problem Solving",
     description:
-      "Every project has challenges — that’s where I thrive. I enjoy taking complex problems and breaking them down into clear, practical solutions. Whether it’s optimizing performance, improving code structure, or finding new ways to enhance usability, I approach each challenge with creativity, patience, and a focus on results.",
+      "Every challenge is a chance to create something smarter. I enjoy finding clean, clever solutions to tricky problems — improving performance, refining design, and making things simply feel better.",
     label: "Connectivity",
   },
 ];

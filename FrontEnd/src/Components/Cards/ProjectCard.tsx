@@ -72,8 +72,7 @@ const ProjectCard = ({
   return (
     <>
       <div
-        className={`h-[100vh] flex lg:justify-between justify-center lg:items-center items-end sticky top-0 z-10 lg:px-20 pb-10 lg:pb-0`}
-        // ref={ref}
+        className={`h-[100vh] flex lg:justify-between justify-center lg:items-center items-end sticky top-0 z-10 lg:px-20 `}
       >
         {/* <AnimatePresence mode="sync">
           <motion.div
@@ -110,7 +109,6 @@ const ProjectCard = ({
           style={{
             scale: scale,
             rotateZ: rotate,
-            // filter: blurFilter,
           }}
           whileInView={{ opacity: 1, filter: "none" }}
         >
@@ -119,14 +117,14 @@ const ProjectCard = ({
               src={urlFor(project.mainImage.asset).url() || ""}
               className="w-full h-full max-h-[70vh] max-w-[80vw] rounded-[10px] object-center object-cover"
             />
-            <div className="w-full h-[10vh] flex justify-between items-center px-8">
+            <div className="w-full h-[10vh] flex justify-between items-center px-8 cursor-default">
               <div>
-                <h1 className="red text-[20px] ">{project.title}</h1>
+                <h1 className="text-[#ff0000] text-[20px] ">{project.title}</h1>
                 <h1 className="text-stone-200">{project.type}</h1>
               </div>
               <div className="text-stone-300 cursor-pointer relative group p-4">
                 Go For Details
-                <div className="absolute bottom-[5px] right-[30px] group-hover:right-[-8px]  w-[70px] h-[20px] opacity-0 group-hover:opacity-100 duration-200">
+                <div className="absolute bottom-[5px] right-[30px] group-hover:right-[-8px] w-[70px] h-[20px] opacity-0 group-hover:opacity-100 duration-200">
                   <span className="absolute w-[50px] h-[2px] top-[50%] translate-y-[-50%] bg-[#ff0000]" />
                   <span className="absolute right-0 border-[10px] border-solid border-transparent border-l-[#ff0000]" />
                 </div>

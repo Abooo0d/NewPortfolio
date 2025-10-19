@@ -4,19 +4,16 @@ import { motion, useScroll } from "motion/react";
 import { client } from "../lib/sanity";
 import type { Project } from "../Types/ProjectType";
 const Portfolio = () => {
-  const [allProjects, setAllProjects] = useState<Project[] | null>([]);
-  const [projects, setProjects] = useState<Project[] | null>([]);
+  const [fullstackProjects, setFullstackProjects] = useState<Project[] | null>(
+    []
+  );
+  const [frontendProjects, setFrontendProjects] = useState<Project[] | null>(
+    []
+  );
   const [activeState, setActiveState] = useState("Frontend");
-  useEffect(() => {
-    client
-      .fetch(`*[_type == "project"] | order(createdAt desc)`)
-      .then((data) => {
-        setAllProjects(data);
-      })
-      .catch(console.error);
-  }, []);
 
   const container = useRef<HTMLDivElement>(null);
+  const mainContainer = useRef<HTMLDivElement>(null);
   const main = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     container: main,
@@ -24,7 +21,27 @@ const Portfolio = () => {
     offset: ["start start", "end end"],
   });
   useEffect(() => {
-    setProjects(allProjects?.filter((project) => project.type == activeState));
+    const fetchProjects = async () => {
+      try {
+        const fullstack = await client.fetch(
+          `*[_type == "project" && type == "Fullstack"] | order(createdAt desc)`
+        );
+        const frontend = await client.fetch(
+          `*[_type == "project" && type == "Frontend"] | order(createdAt desc)`
+        );
+
+        setFullstackProjects(fullstack);
+        setFrontendProjects(frontend);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+  useEffect(() => {
+    const scrollY = window.innerHeight;
+    main.current?.scrollTo({ top: scrollY, behavior: "instant" });
   }, [activeState]);
   return (
     <div className="w-screen min-h-screen h-full relative overflow-hidden snap-start">
@@ -59,7 +76,16 @@ const Portfolio = () => {
           </div>
         </motion.div>
         <div
-          style={{ height: `${!!projects && projects.length * 100}vh` }}
+          style={{
+            height:
+              activeState == "Frontend"
+                ? `calc(${
+                    !!frontendProjects && frontendProjects.length * 100
+                  }vh + 60px)`
+                : `calc(${
+                    !!fullstackProjects && fullstackProjects.length * 100
+                  }vh + 60px)`,
+          }}
           ref={container}
           className="relative"
         >
@@ -97,23 +123,43 @@ const Portfolio = () => {
               <span className="relative"> Fullstack</span>
             </span>
           </div>
-          {projects &&
-            projects.map((project, index) => {
-              const targetScale = 1 - (projects.length - index) * 0.03;
-              const targetRotate = -(projects.length - index) * 2;
-              return (
-                <ProjectCard
-                  project={project}
-                  key={"project" + index}
-                  index={index}
-                  mainRef={main}
-                  range={[index / projects.length, 1]}
-                  targetScale={Math.round(targetScale * 100) / 100}
-                  targetRotate={Math.round(targetRotate)}
-                  scrollY={scrollYProgress}
-                />
-              );
-            })}
+          {activeState == "Frontend"
+            ? !!frontendProjects &&
+              frontendProjects.map((project, index) => {
+                const targetScale =
+                  1 - (frontendProjects.length - index) * 0.03;
+                const targetRotate = -(frontendProjects.length - index) * 2;
+                return (
+                  <ProjectCard
+                    project={project}
+                    key={"project" + index}
+                    index={index}
+                    mainRef={main}
+                    range={[index / frontendProjects.length, 1]}
+                    targetScale={Math.round(targetScale * 100) / 100}
+                    targetRotate={Math.round(targetRotate)}
+                    scrollY={scrollYProgress}
+                  />
+                );
+              })
+            : !!fullstackProjects &&
+              fullstackProjects.map((project, index) => {
+                const targetScale =
+                  1 - (fullstackProjects.length - index) * 0.03;
+                const targetRotate = -(fullstackProjects.length - index) * 2;
+                return (
+                  <ProjectCard
+                    project={project}
+                    key={"project" + index}
+                    index={index}
+                    mainRef={main}
+                    range={[index / fullstackProjects.length, 1]}
+                    targetScale={Math.round(targetScale * 100) / 100}
+                    targetRotate={Math.round(targetRotate)}
+                    scrollY={scrollYProgress}
+                  />
+                );
+              })}
         </div>
       </motion.section>
     </div>
