@@ -1,5 +1,5 @@
 import { AnimatePresence } from "motion/react";
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "motion/react";
 import { BiLogoTypescript } from "react-icons/bi";
 import { FaJsSquare } from "react-icons/fa";
@@ -61,6 +61,7 @@ const ProjectDetails = ({
         return <SiAdobephotoshop className="text-[#00a4e4] text-[50px]" />;
     }
   };
+
   return (
     <AnimatePresence mode="sync">
       {activeIndex == index && (
