@@ -1,6 +1,5 @@
 import React, { useRef, useEffect, useState, useCallback } from "react";
 import { gsap } from "gsap";
-import { number } from "motion";
 
 export interface BentoCardProps {
   color?: string;

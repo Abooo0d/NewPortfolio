@@ -1,4 +1,5 @@
-import { createClient, type ClientConfig } from "@sanity/client";
+import { createClient } from "@sanity/client";
+import type { ClientConfig } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 import type { ImageUrlBuilder } from "@sanity/image-url/lib/types/builder";
 
