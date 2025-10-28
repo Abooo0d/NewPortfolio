@@ -81,10 +81,10 @@ const Portfolio = () => {
               activeState == "Frontend"
                 ? `calc(${
                     !!frontendProjects && frontendProjects.length * 100
-                  }vh + 60px)`
+                  }vh + 560px)`
                 : `calc(${
                     !!fullstackProjects && fullstackProjects.length * 100
-                  }vh + 60px)`,
+                  }vh + 560px)`,
           }}
           ref={container}
           className="relative"
