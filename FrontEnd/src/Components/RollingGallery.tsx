@@ -9,44 +9,52 @@ import type { PanInfo, ResolvedValues } from "motion/react";
 
 const testimonials = [
   {
-    name: "John Doe",
-    role: "Project Manager",
-    company: "TechCorp",
+    name: "Sarah Johnson",
+    role: "Product Manager",
+    company: "TechWave Solutions",
     avatar: "https://i.pravatar.cc/150?img=12",
     quote:
-      "Working with you was an absolute pleasure. Your ability to translate ideas into smooth, functional applications is impressive, and your attention to detail made the project shine. I’d gladly collaborate again.",
+      "Your ability to balance technical precision with user-focused design is outstanding. You always deliver features that not only work perfectly but also make the user experience seamless.",
   },
   {
-    name: "Sarah Johnson",
-    role: "UX Designer",
-    company: "Creative Studio",
-    avatar: "https://i.pravatar.cc/150?img=32",
+    name: "Daniel Lee",
+    role: "Frontend Developer",
+    company: "PixelForge",
+    avatar: "https://i.pravatar.cc/150?img=22",
     quote:
-      "Your collaborative spirit made the entire process seamless. You not only brought the technical expertise but also listened carefully, adapting the product to meet both design goals and user needs. The result exceeded expectations.",
+      "Working with you has been a masterclass in writing maintainable, scalable code. You have an incredible eye for detail and a deep understanding of modern web technologies.",
   },
   {
-    name: "Michael Smith",
-    role: "Software Engineer",
-    company: "InnovateX",
-    avatar: "https://i.pravatar.cc/150?img=45",
+    name: "Olivia Martinez",
+    role: "UI/UX Designer",
+    company: "CreativeCore",
+    avatar: "https://i.pravatar.cc/150?img=36",
     quote:
-      "I was impressed by your problem-solving approach and clean code structure. You consistently find elegant solutions to complex challenges, which makes working with you inspiring and highly productive.",
+      "You have a rare talent for turning abstract ideas into functional, elegant interfaces. Collaborating with you always leads to products that look and feel exceptional.",
   },
   {
-    name: "Michael Smith",
-    role: "Software Engineer",
-    company: "InnovateX",
-    avatar: "https://i.pravatar.cc/150?img=45",
+    name: "James Parker",
+    role: "Backend Developer",
+    company: "CloudSync",
+    avatar: "https://i.pravatar.cc/150?img=18",
     quote:
-      "I was impressed by your problem-solving approach and clean code structure. You consistently find elegant solutions to complex challenges, which makes working with you inspiring and highly productive.",
+      "Your approach to system architecture is top-notch. You think ahead, write efficient APIs, and ensure performance and security are always priorities.",
   },
   {
-    name: "Michael Smith",
-    role: "Software Engineer",
-    company: "InnovateX",
-    avatar: "https://i.pravatar.cc/150?img=45",
+    name: "Emily Davis",
+    role: "Project Coordinator",
+    company: "NextStep Digital",
+    avatar: "https://i.pravatar.cc/150?img=31",
     quote:
-      "I was impressed by your problem-solving approach and clean code structure. You consistently find elegant solutions to complex challenges, which makes working with you inspiring and highly productive.",
+      "You bring structure and calm to every project. Deadlines are met, communication is clear, and everyone feels confident knowing you’re on the team.",
+  },
+  {
+    name: "Robert Chen",
+    role: "Full Stack Developer",
+    company: "CodeCrafters",
+    avatar: "https://i.pravatar.cc/150?img=53",
+    quote:
+      "I admire how you bridge the gap between frontend and backend with ease. Your curiosity and constant drive to improve make every collaboration a learning experience.",
   },
 ];
 
@@ -69,7 +77,7 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const cylinderWidth: number = isScreenSizeSm ? 2000 : 3000;
+  const cylinderWidth: number = isScreenSizeSm ? 1800 : 2400;
   const faceCount: number = testimonials.length;
   const radius: number = cylinderWidth / (2 * Math.PI);
 

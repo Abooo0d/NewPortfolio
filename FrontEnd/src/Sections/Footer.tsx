@@ -38,7 +38,7 @@ const Footer = () => {
     <section className="bg-black min-h-screen w-screen snap-start flex flex-col md:flex-row gap-4 min-[1100px]:gap-0 justify-between items-center lg:px-[100px] px-4 py-8 lg:py-0 relative">
       <div className="absolute w-full bottom-[0px] hidden min-[1100px]:block left-[0%] h-[80px] bg-gradient-to-t from-transparent bg-stone-900 border-t-[2px] border-t-solid border-t-stone-700/50" />
       <img
-        src="./../../public/Assets/FooterImage.png"
+        src="./../../Assets/FooterImage.png"
         className="absolute bottom-[0px] right-[50%] invisible min-[1100px]:visible translate-x-[50%] h-[700px] object-contain z-10"
       />
       <div className="min-[1100px]:min-w-[35%] flex-1 min-[1100px]:flex-0 max-[1100px]:h-[70%] rounded-[20px] p-[1px] z-0 relative bg-stone-600 min-[1100px]:bg-gradient-to-br from-stone-500 via-stone-800 to-bg-black">
