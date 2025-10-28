@@ -1,5 +1,4 @@
 import { AnimatePresence } from "motion/react";
-import React, { useEffect } from "react";
 import { motion } from "motion/react";
 import { BiLogoTypescript } from "react-icons/bi";
 import { FaJsSquare } from "react-icons/fa";

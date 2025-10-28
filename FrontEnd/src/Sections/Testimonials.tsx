@@ -1,4 +1,3 @@
-import CardSwap, { Card } from "../Components/CardSwap";
 import RollingGallery from "../Components/RollingGallery";
 const Testimonials = () => {
   return (

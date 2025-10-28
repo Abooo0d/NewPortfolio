@@ -1,7 +1,5 @@
 import PrimaryButton from "../Components/Shared/PrimaryButton";
 import { FaArrowDown } from "react-icons/fa6";
-import { FaArrowRight } from "react-icons/fa";
-import SecondaryButton from "../Components/Shared/SecondaryButton";
 import BlurText from "../Components/Shared/BlureText";
 import { motion } from "motion/react";
 const LandingPage = () => {

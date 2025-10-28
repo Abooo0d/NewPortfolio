@@ -13,7 +13,6 @@ const Portfolio = () => {
   const [activeState, setActiveState] = useState("Frontend");
 
   const container = useRef<HTMLDivElement>(null);
-  const mainContainer = useRef<HTMLDivElement>(null);
   const main = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     container: main,
