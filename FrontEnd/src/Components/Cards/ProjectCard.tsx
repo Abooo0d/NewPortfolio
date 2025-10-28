@@ -42,7 +42,11 @@ const ProjectCard = ({
         >
           <div className="flex-1 flex-col  overflow-hidden relative flex duration-300">
             <img
-              src={urlFor(project.mainImage.asset).url() || ""}
+              src={
+                ((project.mainImage &&
+                  urlFor(project.mainImage?.asset)?.url()) ||
+                  "") as string
+              }
               className="w-full h-full max-h-[60vh] max-w-[80vw] rounded-[10px] object-center object-cover"
             />
             <div className="w-full h-[10vh] flex justify-between items-center px-8 cursor-default">
